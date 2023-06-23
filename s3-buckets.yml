@@ -1,0 +1,17 @@
+policies:
+- name: get-s3-buckets
+  resource: s3
+  comment: Report running instances
+  filters:
+    - type: value
+      key: Name
+      value: "dummy1.lkp.gen.aa"
+      op: not-equal
+    - type: value
+      key: Name
+      value: "akj.dummy2.lkp.gen.aa"
+      op: not-equal
+  actions:
+    - type: tag
+      key: "CreatorName"
+      value: "LKP"

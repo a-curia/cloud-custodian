@@ -1,0 +1,6 @@
+policies:
+- name: ec2-running-instances
+  resource: ec2
+  comment: Report running instances
+  filters:
+    - "State.Name": running
